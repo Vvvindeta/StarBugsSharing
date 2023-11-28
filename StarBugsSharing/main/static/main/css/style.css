@@ -116,9 +116,8 @@ footer {
 }
 .content {
     font-size:1.3em;
-
+    justify-content: center;
     padding: 1.3em;
-    width: 70%;
 }
 h4 span {
     display: flex;
@@ -142,9 +141,12 @@ h4 span {
     font-size:1.7em;
 
     width: 60%;
-    margin: 0.7em;
+    margin: 2em;
     padding-left: 1.4em;
 
+}
+.li {
+    margin: 1em;
 }
 .footer {
     align-items: center;
@@ -263,8 +265,34 @@ input:focus {
 .map {
     width: 100%;
 }
-
-
+/* faq */
+.default-list {
+    padding: 1.3rem;
+    width:70%;
+}
+summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.4s ease;
+    font-size: 1.3em;
+}
+details {
+    background-color: #000000;
+    padding: 1em 1.3rem; 
+    margin:1em 1.3rem;
+    
+}
+summary:hover {
+    color: #fff
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary:after   {
+     content: "\002B";
+     font-size: 2em;
+}
 
 @keyframes slide-in-anim {
 	100% {
