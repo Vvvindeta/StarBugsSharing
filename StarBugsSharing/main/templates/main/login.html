@@ -1,41 +1,37 @@
-{% extends 'main/template.html'%}
-{% block title %}Частые вопросы{% endblock %}
-{% block content %}
-        <div>
-            <h3><span>frequently asked questions</span></h3>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StarBugsSharing - Аренда марсоходов для исследования поверхности Марса. Путешествуйте вместе с нами!">
+    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Overpass&display=swap" >
+    <title>Вход</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="wrapper">
+            <a href="{% url 'home' %}" class="close">x</a>
+            <div class="column details">
+                <div class="signin">
+                    <h1>Вход</h1>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Пароль" name="password" required>
+                    <a href="#">Напомнить пароль</a>
+                    <button class="form-submit">Войти</button>
+                    <span>Нет аккаунта? <a href="{% url 'registration' %}"><button id="signup">Регистрация</button></a></span>
+                </div>
+            </div>
+            <div class="column content">
+                <div class="signin">
+                    <h1>Добро пожаловать назад!</h1>
+                </div>
+            </div>
         </div>
-        <table>
-            <tr>
-                <td>
-                    Вопрос: Как я могу арендовать марсоход?
-                </td>
-                <td>
-                    Ответ: Для аренды марсохода просто зайдите на наш веб-сайт,
-                    выберите подходящую модель марсохода, укажите даты аренды и заполните необходимую информацию.
-                    Наш менеджер свяжется с вами для уточнения деталей.
-                </td>
-            </tr>
-            <tr>
-                <td>Вопрос: Каков срок аренды марсохода?</td>
-                <td>Ответ: Срок аренды может варьироваться в зависимости от ваших потребностей.
-                    Мы предлагаем гибкие варианты, начиная от нескольких дней до длительных миссий.
-                    Обсудите свои требования с нашими специалистами, чтобы мы могли предложить оптимальное решение.
-                    </td>
-            </tr>
-            <tr>
-                <td>Вопрос: Каковы технические характеристики доступных марсоходов?</td>
-                <td>Ответ: Наши марсоходы оборудованы передовой технологией для исследования марсианской поверхности.
-                    Технические характеристики включают в себя системы навигации,
-                    научные инструменты и возможности передачи данных.
-    </td>
-            </tr>
-            <tr>
-                <td>Вопрос: Какие возможности обеспечивает ваша техподдержка во время миссии?</td>
-                <td>Наша техподдержка доступна 24/7 для решения технических вопросов и оперативного реагирования
-                    на любые проблемы во время миссии.
-                    Мы также предоставляем удаленный мониторинг и диагностику оборудования.
-    </td>
-            </tr>
-        </table>
-        <p class="content">Если у вас остались вопросы, вы можете обратиться в нашу службу поддержки</p></div>
-{% endblock %}
+    </div>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="StarBugsSharing - Аренда марсоходов для исследования поверхности Марса. Путешествуйте вместе с нами!">
-    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon.ico?' %}">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,8 @@
             </nav>
         </div>
         <div class="rightside">
-            <a href="#popup" id="nav_login">Войти</a>
-            <a href="#popup" id="nav_reg">Регистрация</a>
+            <a href="{% url 'login' %}" id="nav_login">Войти</a>
+            <a href="{% url 'registration' %}" id="nav_reg">Регистрация</a>
         </div>
     </header>
 
