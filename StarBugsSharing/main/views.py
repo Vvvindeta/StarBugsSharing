@@ -20,8 +20,10 @@ def rent(request):
 def rules(request):
     return render(request, 'main/rules.html')
 
+
 def login(request):
     return render(request, 'main/login.html')
+
 
 def registration(request):
     return render(request, 'main/registration.html')
