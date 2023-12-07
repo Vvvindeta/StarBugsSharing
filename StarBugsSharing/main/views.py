@@ -27,3 +27,6 @@ def login(request):
 
 def registration(request):
     return render(request, 'main/registration.html')
+
+def account(request):
+    return render(request, 'main/account.html')

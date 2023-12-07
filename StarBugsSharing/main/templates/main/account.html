@@ -1,0 +1,55 @@
+{% extends 'main/template.html'%}
+{% block title %}Аккаунт{% endblock %}
+{% load static %}
+{% block content %}
+
+    <div class="wrapper">
+        <div class="user-visual">
+            <div class="user-pfp">
+                <img class="user-photo" src="{% static 'main/img/astronaut-svgrepo-com.svg' %}" alt="">
+            </div>
+            <div class="user-data">
+                <h3 class="my-profile">Мой профиль</h3> 
+                Имя
+                Телефон
+                Email
+
+            </div>
+        </div>
+        <div class="account-data">
+            <div class="balance-data">
+                <h3>Баланс</h3>
+                <h1>4687.7 рублей</h1>
+                <button class="form-submit">Пополнить</button>
+                <div class="promocode-box">
+                    <h4>Использовать промокод</h4>
+                    <input type="text" name="">
+                    <button class="form-submit">Активировать</button>
+                </div>
+                
+            </div>
+            <div class="rents-data">
+                <h3>История аренды</h3>
+                <hr>
+                <table class="rents-history">
+                    <tr class="rents-history-header">
+                        <td>Номер</td>
+                        <td>Статус</td>
+                        <td>Марсоход</td>
+                        <td>Начало аренды</td>
+                        <td>Завершение аренды</td>
+                        <td>Сумма</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Завершена</td>
+                        <td>и567рн198</td>
+                        <td>12:56</td>
+                        <td>14:08</td>
+                        <td>456 р.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
