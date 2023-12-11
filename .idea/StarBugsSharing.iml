@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/StarBugsSharing" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12 (sharing)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="course store django" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
