@@ -19,10 +19,15 @@
             <div class="column details">
                 <div class="signin">
                     <h1>Вход</h1>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="password" placeholder="Пароль" name="password" required>
-                    <a href="#">Напомнить пароль</a>
-                    <button class="form-submit">Войти</button>
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button class="form-submit" type="submit">Войти</button>
+                        <a href="#">Напомнить пароль</a>
+                      </form>
+
                     <span>Нет аккаунта? <a href="{% url 'registration' %}"><button id="signup">Регистрация</button></a></span>
                 </div>
             </div>

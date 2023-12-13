@@ -19,12 +19,13 @@
             <div class="column details">
                 <div class="signup">
                     <h1>Регистрация</h1>
-                    <input type="phone" placeholder="Ваш телефон" name="phone" required>
-                    <input type="name" placeholder="Имя" name="name" required>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="password" placeholder="Пароль" name="password" required>
-                    <input type="password" placeholder="Подтвердите пароль" name="confirm-password" required>
-                    <button class="form-submit">Зарегистрироваться</button>
+                      <form method="post" action="{% url 'registration' %}">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button class="form-submit" type="submit">Зарегистрироваться</button>
+                      </form>
                     <span>Уже есть аккаунт? <a href="{% url 'login' %}"><button id="signin">Войти</button></a></span>
                 </div>
             </div>
