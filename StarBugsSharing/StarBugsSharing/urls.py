@@ -19,5 +19,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', include('main.urls', namespace='main')),
+    path('', include('users.urls', namespace='user')),
 ]
+
+"""
+sbs.com/admin
+sbs.com/
+sbs.com/faq
+sbs.com/premium
+sbs.com/rules
+sbs.com/user
+"""

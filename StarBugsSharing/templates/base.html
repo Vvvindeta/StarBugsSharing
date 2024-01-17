@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StarBugsSharing - Аренда марсоходов для исследования поверхности Марса. Путешествуйте вместе с нами!">
+    <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon.ico?' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Overpass&display=swap" >
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="leftside">
+            <a href="{% url 'main:home' %}" class="brand-link">
+                <h1 class="brand-name">StarBugs</h1>
+                <h1 class="brand-name">Sharing</h1>
+            </a>
+        </div>
+        <div class="centerside">
+            <nav>
+                <ul>
+                    <li><a href="#">Арендовать</a></li>
+                    <li><a href="{% url 'main:rules' %}">ПДД</a></li>
+                    <li><a href="{% url 'main:faq' %}">ЧаВо</a></li>
+                    <li><a href="{% url 'main:premium' %}">StarBugs++</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="rightside">
+            <a href="{% url 'users:login' %}" id="nav_login">Войти</a>
+            <a href="{% url 'users:registration' %}" id="nav_reg">Регистрация</a>
+        </div>
+    </header>
+
+    <main>
+        {% block content%}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        © 2023, StarBugsSharing
+    </footer>
+</body>
+</html>
