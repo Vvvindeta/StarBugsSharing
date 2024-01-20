@@ -1,36 +1,56 @@
-{% extends 'main/base.html'%}
-{% block title %}Аккаунт{% endblock %}
+{% extends 'base.html'%}
 {% load static %}
+{% block title %}Аккаунт{% endblock %}
 {% block content %}
-
     <div class="wrapper">
         <div class="user-visual">
             <div class="user-pfp">
-                <img class="user-photo" src="{% static 'main/img/astronaut-svgrepo-com.svg' %}" alt="">
+                <img class="user-photo" src="{% static 'images/avatars/astronaut-svgrepo-com.svg' %}" alt="">
             </div>
             <div class="user-data">
-                <h3 class="my-profile">Мой профиль</h3> 
-                Имя
-                Телефон
-                Email
-
+                <h3 class="my-profile-title">Мой профиль</h3> 
+                <table class="account-info">
+                    <tr>
+                        <td class="first-col">Имя</td>
+                        <td class="second-col">Абоба</td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">Фамилия</td>
+                        <td class="second-col">Абобин</td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">Телефон</td>
+                        <td class="second-col">+7 966 666 66 66</td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">Email</td>
+                        <td class="second-col">aboba@abo.ba</td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">Пароль</td>
+                        <td class="second-col">*******</td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="account-data">
             <div class="balance-data">
-                <h3>Баланс</h3>
-                <h1>4687.7 рублей</h1>
+                <h3 class="balance-title">Баланс</h3>
+                <h1 class="balance-value">4687.7 рублей</h1>
                 <button class="form-submit">Пополнить</button>
-                <div class="promocode-box">
-                    <h4>Использовать промокод</h4>
-                    <input type="text" name="">
-                    <button class="form-submit">Активировать</button>
-                </div>
-                
             </div>
+            <div class="promocode-box">
+                <h4>Использовать промокод</h4>
+                <form class="styled-form">
+                    <input class="promocode-input"" type="text" placeholder="Введите промокод">
+                    <button class="form-submit">Активировать</button>
+                </form>
+            </div>
+                
+            
             <div class="rents-data">
                 <h3>История аренды</h3>
-                <hr>
+                <hr class="rent-history-hr">
                 <table class="rents-history">
                     <tr class="rents-history-header">
                         <td>Номер</td>

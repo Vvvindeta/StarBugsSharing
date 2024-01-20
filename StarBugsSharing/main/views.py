@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate
 
 
 def error_404(request, exception):
@@ -25,6 +23,7 @@ def premium(request):
 
 def rules(request):
     return render(request, 'main/rules.html')
+
 
 def rent(request):
     return render(request, 'main/rent.html')

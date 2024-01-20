@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StarBugsSharing - Аренда марсоходов для исследования поверхности Марса. Путешествуйте вместе с нами!">
+    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Overpass&display=swap" >
+    <title>Вход</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="wrapper">
+            <a href="{% url 'home' %}" class="close">x</a>
+            <div class="column details">
+                <div class="signin">
+                    <h1>Вход</h1>
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button class="form-submit" type="submit">Войти</button>
+                        <a href="#">Напомнить пароль</a>
+                      </form>
+
+                    <span>Нет аккаунта? <a href="{% url 'registration' %}"><button id="signup">Регистрация</button></a></span>
+                </div>
+            </div>
+            <div class="column content">
+                <div class="signin">
+                    <h1>Добро пожаловать назад!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
