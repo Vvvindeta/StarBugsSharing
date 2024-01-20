@@ -3,6 +3,14 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
 
 
+def error_404(request, exception):
+    return render(request, '404.html')
+
+
+# def error_500(request, exception):
+#     return render(request, '500.html', status=500)
+
+
 def index(request):
     return render(request, 'main/index.html')
 
@@ -17,3 +25,6 @@ def premium(request):
 
 def rules(request):
     return render(request, 'main/rules.html')
+
+def rent(request):
+    return render(request, 'main/rent.html')

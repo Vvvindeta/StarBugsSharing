@@ -11,7 +11,7 @@ body {
         rgba(0, 0, 0, 0.3),
         rgba(0, 0, 0, 0.6)
     ),
-    url("/static/main/img/bg_img.jpg");
+    url("../images/bg/bg_img.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -85,7 +85,6 @@ nav a {
 nav a:hover {
     color: #fff;
 }
-
 h3 span {
     font-weight: 900;
     display: flex;
@@ -147,6 +146,50 @@ h4 span {
 ol {
     list-style-type: armenian;
 }
+
+
+
+
+/* Rent */
+.rent-main-page {
+    margin: 0 100px;
+    margin-bottom: 50px;
+}
+.rover-card {
+    border: 5px solid #000000;
+    padding: 5px;
+}
+.rover-name {
+    text-align: center;
+}
+.card-info {
+    font-size: 14px;
+}
+.rover-specs {
+    list-style-position: inside;
+    margin: 5px auto;
+}
+.rover-specs td {
+
+}
+.rent-page-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    row-gap: 25px;
+}
+.card-image {
+    text-align: center;
+}
+.rover-image {
+    width: 200px;
+}
+.rent-block {
+    margin: 10px;
+    text-align: center;
+}
+
+
 
 
 /* Логин/Регистрация */
@@ -226,7 +269,7 @@ input:focus {
     background: #000000;
     border: none;
     border-radius: 20px;
-    color: #fff;
+    color: #FFD5A6;
     padding: 12px 45px;
     font-size: 12px;
     font-weight: bold;
@@ -256,10 +299,6 @@ input:focus {
 }
 
 
-/* rent */
-.map {
-    width: 100%;
-}
 
 
 /* faq */
@@ -303,7 +342,6 @@ summary:after   {
     padding: 30px;
     flex-grow: 1;
 }
-
 .user-pfp {
     text-align: center;
 }
