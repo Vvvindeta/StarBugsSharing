@@ -1,31 +1,44 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.contrib import auth
 
-# from users.forms import UserLoginForm, UserRegistrationForm
+from users.forms import UserLoginForm, UserRegistrationForm
+
+from users.models import User
+
 
 def registration(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('account')
+            return redirect('users:account')
     else:
         form = UserRegistrationForm()
-    return render(request, 'main/registration.html', {'form': form})
+    return render(request, 'users/registration.html', {'form': form})
 
 
 def login(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
+        form = UserLoginForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')  # Замените 'home' на ваш путь для домашней страницы
+            username = request.POST['username']
+            password = request.POST['password']
+            user = auth.authenticate(username=username, password=password)
+            if user:
+                auth.login(request, user)
+                return HttpResponseRedirect(reverse('users:account'))
     else:
-        form = AuthenticationForm()
-    return render(request, 'main/login.html', {'form': form})
+        form = UserLoginForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'users/login.html', context)
+
 
 def account(request):
     return render(request, 'users/account.html')

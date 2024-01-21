@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from rovers.models import Rover
+
+def rent(request):
+
+    context = {
+        "rovers": Rover.objects.all(),
+    }
+
+    return render(request, 'rovers/rent.html', context)

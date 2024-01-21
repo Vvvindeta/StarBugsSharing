@@ -12,23 +12,23 @@
                 <table class="account-info">
                     <tr>
                         <td class="first-col">Имя</td>
-                        <td class="second-col">Абоба</td>
+                        <td class="second-col">{{ user.first_name }}</td>
                     </tr>
                     <tr>
                         <td class="first-col">Фамилия</td>
-                        <td class="second-col">Абобин</td>
+                        <td class="second-col">{{ user.last_name }}</td>
                     </tr>
                     <tr>
                         <td class="first-col">Телефон</td>
-                        <td class="second-col">+7 966 666 66 66</td>
+                        <td class="second-col">{{ user.phone_number }}</td>
                     </tr>
                     <tr>
                         <td class="first-col">Email</td>
-                        <td class="second-col">aboba@abo.ba</td>
+                        <td class="second-col">{{ user.email }}</td>
                     </tr>
                     <tr>
                         <td class="first-col">Пароль</td>
-                        <td class="second-col">*******</td>
+                        <td class="second-col">{{ user.password }}</td>
                     </tr>
                 </table>
             </div>
@@ -36,7 +36,8 @@
         <div class="account-data">
             <div class="balance-data">
                 <h3 class="balance-title">Баланс</h3>
-                <h1 class="balance-value">4687.7 рублей</h1>
+                <h1 class="balance-value">{{ user.balance_value}}</h1>
+                <h3 class="rubles-title">рублей</h3>
                 <button class="form-submit">Пополнить</button>
             </div>
             <div class="promocode-box">

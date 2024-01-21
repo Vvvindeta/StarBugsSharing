@@ -23,7 +23,8 @@ from StarBugsSharing import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
-    path('', include('users.urls', namespace='user')),
+    path('', include('users.urls', namespace='users')),
+    path('', include('rovers.urls', namespace='rovers')),
 ]
 
 if settings.DEBUG:

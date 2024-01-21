@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="leftside">
-            <a href="{% url 'main:home' %}" class="brand-link">
+            <a href="{% url 'main:index' %}" class="brand-link">
                 <h1 class="brand-name">StarBugs</h1>
                 <h1 class="brand-name">Sharing</h1>
             </a>
@@ -23,7 +23,7 @@
         <div class="centerside">
             <nav>
                 <ul>
-                    <li><a href="{% url 'main:rent' %}">Арендовать</a></li>
+                    <li><a href="{% url 'rovers:rent' %}">Арендовать</a></li>
                     <li><a href="{% url 'main:rules' %}">ПДД</a></li>
                     <li><a href="{% url 'main:faq' %}">ЧаВо</a></li>
                     <li><a href="{% url 'main:premium' %}">StarBugs++</a></li>

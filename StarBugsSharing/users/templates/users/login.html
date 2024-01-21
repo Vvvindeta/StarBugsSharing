@@ -15,20 +15,20 @@
 <body>
     <div class="overlay">
         <div class="wrapper">
-            <a href="{% url 'home' %}" class="close">x</a>
+            <a href="{% url 'main:index' %}" class="close">x</a>
             <div class="column details">
                 <div class="signin">
                     <h1>Вход</h1>
-                    <form method="post" action="{% url 'login' %}">
+                    <form method="post" action="{% url 'users:login' %}">
                         {% csrf_token %}
 
-                        {{ form.as_p }}
+                        {{ form }}
 
                         <button class="form-submit" type="submit">Войти</button>
                         <a href="#">Напомнить пароль</a>
                       </form>
 
-                    <span>Нет аккаунта? <a href="{% url 'registration' %}"><button id="signup">Регистрация</button></a></span>
+                    <span>Нет аккаунта? <a href="{% url 'users:registration' %}"><button id="signup">Регистрация</button></a></span>
                 </div>
             </div>
             <div class="column content">

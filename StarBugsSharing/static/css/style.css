@@ -15,9 +15,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-p {
-    margin: 1em;
-}
 hr {
 	border: 2px solid #000000;
 }
@@ -171,9 +168,10 @@ ol {
 .rover-specs {
     list-style-position: inside;
     margin: 5px auto;
+    column-gap: normal;
 }
-.rover-specs td {
-
+.rover-specs tr {
+    vertical-align: baseline;
 }
 .rent-page-content {
     display: grid;
@@ -185,7 +183,8 @@ ol {
     text-align: center;
 }
 .rover-image {
-    width: 200px;
+    width: 300px;
+    height: 225px;
 }
 .rent-block {
     margin: 10px;
@@ -333,6 +332,8 @@ summary:after   {
 }
 
 
+
+
 /* account */
 .wrapper {
     display: flex;
@@ -399,7 +400,6 @@ summary:after   {
     background-color: transparent;
     color: #FFD5A6;
     width: 100%;
-
 }
 .promocode-input::placeholder {
     color: #FFD5A6;
@@ -412,8 +412,14 @@ summary:after   {
     margin-right: 20px;
 }
 .balance-value {
+    margin-right: 10px;
+}
+.rubles-title {
     margin-right: 20px;
 }
+
+
+
 
 @keyframes slide-in-anim {
 	100% {
