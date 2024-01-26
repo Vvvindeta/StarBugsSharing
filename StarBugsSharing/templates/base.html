@@ -27,12 +27,23 @@
                     <li><a href="{% url 'main:rules' %}">ПДД</a></li>
                     <li><a href="{% url 'main:faq' %}">ЧаВо</a></li>
                     <li><a href="{% url 'main:premium' %}">StarBugs++</a></li>
+                    <li>
+                        {% if user.is_admin or user.is_staff %}
+                            <a href="{% url 'admin:index' %}">Админка</a>
+                        {% endif %}
+                    </li>
                 </ul>
             </nav>
         </div>
         <div class="rightside">
+            {% if not user.is_authenticated %}
             <a href="{% url 'users:login' %}" id="nav_login">Войти</a>
             <a href="{% url 'users:registration' %}" id="nav_reg">Регистрация</a>
+            {% else %}
+
+            <a href="{% url 'users:account' %}" id="nav_account">Профиль</a>
+            <a href="{% url 'users:logout' %}" id="nav_logout">Выйти</a>
+            {% endif %}
         </div>
     </header>
 

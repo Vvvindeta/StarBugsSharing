@@ -10,26 +10,33 @@
             <div class="user-data">
                 <h3 class="my-profile-title">Мой профиль</h3> 
                 <table class="account-info">
-                    <tr>
-                        <td class="first-col">Имя</td>
-                        <td class="second-col">{{ user.first_name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="first-col">Фамилия</td>
-                        <td class="second-col">{{ user.last_name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="first-col">Телефон</td>
-                        <td class="second-col">{{ user.phone_number }}</td>
-                    </tr>
+                    {% if user.first_name %}
+                        <tr>
+                            <td class="first-col">Имя</td>
+                            <td class="second-col">{{ user.first_name }}</td>
+                        </tr>
+                    {% endif %}
+
+                    {% if user.last_name %}
+                        <tr>
+                            <td class="first-col">Фамилия</td>
+                            <td class="second-col">{{ user.last_name }}</td>
+                        </tr>
+                    {% endif %}
+
+                    {% if user.phone_number %}
+                         <tr>
+                                <td class="first-col">Телефон</td>
+                                <td class="second-col">{{ user.phone_number }}</td>
+                            </tr>
+                    {% endif %}
+
+                    {% if user.email %}
                     <tr>
                         <td class="first-col">Email</td>
                         <td class="second-col">{{ user.email }}</td>
                     </tr>
-                    <tr>
-                        <td class="first-col">Пароль</td>
-                        <td class="second-col">{{ user.password }}</td>
-                    </tr>
+                    {% endif %}
                 </table>
             </div>
         </div>
@@ -38,12 +45,12 @@
                 <h3 class="balance-title">Баланс</h3>
                 <h1 class="balance-value">{{ user.balance_value}}</h1>
                 <h3 class="rubles-title">рублей</h3>
-                <button class="form-submit">Пополнить</button>
+                <button class="form-submit">{% csrf_token %}Пополнить</button>
             </div>
             <div class="promocode-box">
                 <h4>Использовать промокод</h4>
                 <form class="styled-form">
-                    <input class="promocode-input"" type="text" placeholder="Введите промокод">
+                    <input class="promocode-input" type="text" placeholder="Введите промокод">
                     <button class="form-submit">Активировать</button>
                 </form>
             </div>
