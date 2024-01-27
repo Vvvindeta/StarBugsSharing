@@ -9,7 +9,7 @@ class User(AbstractUser):
     nickname = models.CharField(max_length=20, blank=False)
     image = models.ImageField(upload_to='users_images', blank=True, null=True)
     email = models.EmailField(max_length=60, blank=False, unique=True)
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    phone_number = models.CharField(max_length=20)
     balance_value = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     class Meta:

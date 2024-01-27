@@ -45,7 +45,9 @@
                 <h3 class="balance-title">Баланс</h3>
                 <h1 class="balance-value">{{ user.balance_value}}</h1>
                 <h3 class="rubles-title">рублей</h3>
-                <button class="form-submit">{% csrf_token %}Пополнить</button>
+                <a href="{% url 'users:increase_balance' %}">
+                    <button class="form-submit">Пополнить</button>
+                </a>
             </div>
             <div class="promocode-box">
                 <h4>Использовать промокод</h4>

@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -54,5 +54,9 @@ def account(request):
     return render(request, 'users/account.html')
 
 
-def throw(request):
-    pass
+@login_required
+def increase_balance(request):
+    user = request.user
+    user.balance_value += 500
+    user.save()
+    return redirect('users:account')  # Замените 'home' на имя вашего URL-маршрута главной страницы
