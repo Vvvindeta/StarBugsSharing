@@ -3,10 +3,19 @@
 {% load static %}
 {% block content %}
 <div class="rent-main-page">
+
     <div class="banner">
-        <p>some info here</p>
-        <h3>filters</h3>
+        <div class="widget">
+            <h3 class="widget-title">Фильтры</h3>
+            <ul class="widget-list">
+                <li><a href="?sort_by=default">По умолчанию</a></li>
+                <li><a href="?sort_by=rate">По тарифу</a></li>
+                <li><a href="?sort_by=mileage">По пробегу</a></li>
+                <li><a href="?sort_by=speed">По скорости</a></li>
+            </ul>
+        </div>
     </div>
+
     <div class="rent-page-content">
         {% for rover in rovers %}
             <div class="rover-card">
