@@ -18,6 +18,12 @@ body {
 hr {
 	border: 2px solid #000000;
 }
+a {
+    transition: 0.4s ease;
+}
+a:hover {
+    color: #fff;
+}
 header {
     display: flex;
     position: sticky;
@@ -158,6 +164,7 @@ ol {
 .rover-card {
     border: 5px solid #000000;
     padding: 5px;
+    width: 360px;
 }
 .rover-name {
     text-align: center;
@@ -189,38 +196,23 @@ ol {
 .rent-block {
     margin: 10px;
     text-align: center;
+    height: max-content;
 }
 
 /* для списка фильтров */
-.widget {
-  padding: 20px 30px;
+.filters {
+  margin: 20px 0;
 }
-.widget-title {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 16px;
-  padding-left: 15px;
-  margin-bottom: 15px;
-  border-left: 2px solid #b99d61;
+.filters-list {
+    display: flex;
 }
-.widget-list {
-  padding: 0;
-  list-style: none;
+.filters-list a {
+    text-decoration: none;
 }
-.widget-list a:before {
-  content: "\2014";
-  margin-right: 14px;
+.filters-list li {
+    list-style: none;
+    margin-right: 20px;
 }
-.widget-list a {
-  text-decoration: none;
-  outline: none;
-  display: block;
-  padding: 6px 0;
-  letter-spacing: 1px;
-  transition: .3s linear;
-}
-.widget-list a:hover {color: #b99d61;}
-
 
 
 

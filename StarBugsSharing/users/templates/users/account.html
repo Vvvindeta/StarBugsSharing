@@ -61,24 +61,44 @@
             <div class="rents-data">
                 <h3>История аренды</h3>
                 <hr class="rent-history-hr">
-                <table class="rents-history">
-                    <tr class="rents-history-header">
-                        <td>Номер</td>
-                        <td>Статус</td>
-                        <td>Марсоход</td>
-                        <td>Начало аренды</td>
-                        <td>Завершение аренды</td>
-                        <td>Сумма</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Завершена</td>
-                        <td>и567рн198</td>
-                        <td>12:56</td>
-                        <td>14:08</td>
-                        <td>456 р.</td>
-                    </tr>
-                </table>
+                {% if usings %}
+                    <table class="rents-history">
+                        <tr class="rents-history-header">
+                            <td>Номер</td>
+                            <td>Статус</td>
+                            <td>Марсоход</td>
+                            <td>Начало аренды</td>
+                            <td>Завершение аренды</td>
+                            <td>Сумма</td>
+                        </tr>
+                        {% for using, cost in usings_with_total %}
+                            <tr>
+                                <td>{{ using.using_id }}</td>
+                                {% if using.end_time %}
+                                <td>Завершена</td>
+                                {% else %}
+                                <td>Не завершена</td>
+                                {% endif %}
+                                <td>{{ using.rover }}</td>
+                                <td>{{ using.start_time }}</td>
+                                {% if using.end_time %}
+                                <td>{{ using.end_time }}</td>
+                                {% else %}
+                                <td> 
+                                    <form method="post" action="{% url 'rovers:end_rent' using.rover_id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="form-submit rent-btn">Завершить</button>
+                                    </form>
+                                </td>
+                                {% endif %}
+                                <td>{{ cost }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>У вас еще нет истории аренды.</p>
+                {% endif %}
+                
             </div>
         </div>
     </div>

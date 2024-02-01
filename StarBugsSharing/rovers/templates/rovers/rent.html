@@ -5,60 +5,69 @@
 <div class="rent-main-page">
 
     <div class="banner">
-        <div class="widget">
-            <h3 class="widget-title">Фильтры</h3>
-            <ul class="widget-list">
-                <li><a href="?sort_by=default">По умолчанию</a></li>
-                <li><a href="?sort_by=rate">По тарифу</a></li>
-                <li><a href="?sort_by=mileage">По пробегу</a></li>
-                <li><a href="?sort_by=speed">По скорости</a></li>
+        <div class="filters">
+            <ul class="filters-list">
+                <li><a href="?sort_by=default">по умолчанию</a></li>
+                <li><a href="?sort_by=rate">по тарифу</a></li>
+                <li><a href="?sort_by=mileage">по пробегу</a></li>
+                <li><a href="?sort_by=speed">по скорости</a></li>
             </ul>
         </div>
     </div>
 
     <div class="rent-page-content">
         {% for rover in rovers %}
-            <div class="rover-card">
-                <div class="card-image">
-                    {% if rover.image %}
-                        <img class="rover-image" src="{{ rover.image.url }}" alt="Rover Image">
-                    {% else %}
-                        <img class="rover-image" src="{% static "images/rovers/rover_not_found.png" %}" alt="">
-                    {% endif %}
+            {% if rover.is_available %}
+                <div class="rover-card">
+                    <div class="card-image">
+                        {% if rover.image %}
+                            <img class="rover-image" src="{{ rover.image.url }}" alt="Rover Image">
+                        {% else %}
+                            <img class="rover-image" src="{% static "images/rovers/rover_not_found.png" %}" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="card-info">
+                        <h3 class="rover-name">{{ rover.rover_name }}</h3>
+                        <table class="rover-specs">
+                            <tr>
+                                <td class="first-col">Пробег</td>
+                                <td>{{ rover.mileage }} км</td>
+                            </tr>
+                            <tr>
+                                <td class="first-col">Скорость</td>
+                                <td>{{ rover.speed }} км/ч</td>
+                            </tr>
+                            <tr>
+                                <td class="first-col">Оборудование</td>
+                                <td>
+                                    <ul>
+                                        {% for eq in rover.equipment_as_list %}
+                                            <li>{{ eq }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first-col">Тариф</td>
+                                <td>{{ rover.rate }} руб/мин</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="rent-block">
+                        <form method="post" action="{% url 'rovers:rent_rover' rover.rover_id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="form-submit rent-btn">Арендовать</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-info">
-                    <h3 class="rover-name">{{ rover.rover_name }}</h3>
-                    <table class="rover-specs">
-                        <tr>
-                            <td class="first-col">Пробег</td>
-                            <td>{{ rover.mileage }} км</td>
-                        </tr>
-                        <tr>
-                            <td class="first-col">Скорость</td>
-                            <td>{{ rover.speed }} км/ч</td>
-                        </tr>
-                        <tr>
-                            <td class="first-col">Оборудование</td>
-                            <td>
-                                <ul>
-                                    {% for eq in rover.equipment_as_list %}
-                                        <li>{{ eq }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="first-col">Тариф</td>
-                            <td>{{ rover.rate }} руб/мин</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="rent-block">
-                    <button class="form-submit rent-btn">Арендовать</button>
-                </div>
-            </div>
+            {% endif %}
+            
         {% endfor %}
 
     </div>
 </div>
+
+
+
+
 {% endblock %}

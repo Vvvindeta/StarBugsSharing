@@ -49,7 +49,7 @@ class UserRegistrationForm(UserCreationForm):
         )
     )
     password2 = forms.CharField(
-        label="подтвердите пароль",
+        label="Подтвердите пароль",
         widget=forms.PasswordInput(
             attrs={
                 "class": "form-control",
