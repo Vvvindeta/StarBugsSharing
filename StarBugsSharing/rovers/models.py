@@ -11,7 +11,7 @@ class Rover(models.Model):
     is_available = models.BooleanField(default=True)
     charge = models.PositiveIntegerField(default=0)
     location_id = models.IntegerField()
-    equipment = models.TextField(null=True)
+    equipment = models.TextField(null=True, help_text="Через запятую с большой буквы")
     mileage = models.PositiveIntegerField(default=0)
     speed = models.PositiveIntegerField(default=0)
     rate = models.DecimalField(max_digits=10, decimal_places=2, default=0)
@@ -30,7 +30,8 @@ class Rover(models.Model):
 class Using(models.Model):
     using_id = models.AutoField(primary_key=True)
     start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    end_time = models.DateTimeField(null=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id', related_name='usings')
     rover = models.ForeignKey(Rover, on_delete=models.CASCADE, db_column='rover_id', related_name='usings')

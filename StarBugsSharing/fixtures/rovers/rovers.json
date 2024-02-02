@@ -1,0 +1,290 @@
+[
+    {
+        "model": "rovers.rover",
+        "pk": 1,
+        "fields": {
+            "rover_name": "Rover MX 500",
+            "rover_number": "A123BC",
+            "image": "rovers_images/3b2c37851e.jpg",
+            "is_available": true,
+            "charge": 0,
+            "location_id": 1,
+            "equipment": "Камера,Спидометр,Барометр",
+            "mileage": 3,
+            "speed": 2,
+            "rate": "15.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 2,
+        "fields": {
+            "rover_name": "MarsRV K1",
+            "rover_number": "B532XC",
+            "image": "rovers_images/4bca9d90310855c59f5cd8597d00f77b_rmsfHE7.jpg",
+            "is_available": true,
+            "charge": 98,
+            "location_id": 1,
+            "equipment": "Спидометр,Механические руки,Солнечные батареи",
+            "mileage": 10,
+            "speed": 8,
+            "rate": "20.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 3,
+        "fields": {
+            "rover_name": "MRS Rover V1",
+            "rover_number": "K532LM",
+            "image": "rovers_images/mars-surface-rover-3d-model-low-poly-max-obj-3ds-fbx-stl.png.jpeg",
+            "is_available": true,
+            "charge": 84,
+            "location_id": 1,
+            "equipment": "Камеры,Датчик землетрясений,Анализатор грунта,Термометр",
+            "mileage": 3,
+            "speed": 3,
+            "rate": "10.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 4,
+        "fields": {
+            "rover_name": "Mars Express",
+            "rover_number": "G654DY",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Камеры,Спектрометр,Барометр",
+            "mileage": 23,
+            "speed": 1,
+            "rate": "13.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 5,
+        "fields": {
+            "rover_name": "Starwalker",
+            "rover_number": "N829VH",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Камеры,Радиоспектрометр,Химический анализатор,Барометр",
+            "mileage": 43,
+            "speed": 2,
+            "rate": "21.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 6,
+        "fields": {
+            "rover_name": "Galaxy Explorer",
+            "rover_number": "G137TK",
+            "image": "rovers_images/4.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Камеры,Спектрометр,Анализатор грунта,Магнитометр",
+            "mileage": 76,
+            "speed": 1,
+            "rate": "8.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 7,
+        "fields": {
+            "rover_name": "Opportunity M2",
+            "rover_number": "L923WX",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Камеры,Лазеры,Спектрометр",
+            "mileage": 13,
+            "speed": 4,
+            "rate": "13.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 8,
+        "fields": {
+            "rover_name": "Perseverance",
+            "rover_number": "L425MR",
+            "image": "rovers_images/scale_1200.jpeg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Лазерный спектрометр,Камеры,Химический анализатор",
+            "mileage": 7,
+            "speed": 2,
+            "rate": "14.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 9,
+        "fields": {
+            "rover_name": "MSpirit KX",
+            "rover_number": "G341VP",
+            "image": "rovers_images/Paris_Air_Show_2007-06-24_n18.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Тепловизор,Буровая установка,Анализатор грунта",
+            "mileage": 17,
+            "speed": 1,
+            "rate": "25.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 10,
+        "fields": {
+            "rover_name": "Sojourner",
+            "rover_number": "L233ZS",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Гравиметр,Магнитометр,Изотопный анализатор,Анализатор атмосферы",
+            "mileage": 16,
+            "speed": 4,
+            "rate": "18.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 11,
+        "fields": {
+            "rover_name": "Copter M",
+            "rover_number": "K674VV",
+            "image": "rovers_images/Mars_Samples_retrieval_landercropped.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Метеостанция,Может взлетать на небольшую высоту,Ультразвуковые сенсоры,Камеры",
+            "mileage": 22,
+            "speed": 13,
+            "rate": "30.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 12,
+        "fields": {
+            "rover_name": "Copter M Lite",
+            "rover_number": "H729KD",
+            "image": "rovers_images/maxresdefault-3-1.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Может взлетать на небольшую высоту,Камеры",
+            "mileage": 38,
+            "speed": 13,
+            "rate": "24.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 13,
+        "fields": {
+            "rover_name": "Marsjourney",
+            "rover_number": "T239PY",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Телескоп,Оптический зонд,Инфракрасные датчики",
+            "mileage": 20,
+            "speed": 3,
+            "rate": "12.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 14,
+        "fields": {
+            "rover_name": "Pathfinder",
+            "rover_number": "T257GN",
+            "image": "rovers_images/dff64e071925fdde6701ceb9e7466481.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Камеры, Спидометр,Барометр,Телескоп",
+            "mileage": 14,
+            "speed": 7,
+            "rate": "11.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 15,
+        "fields": {
+            "rover_name": "Average V1",
+            "rover_number": "K749ML",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Телескоп,Камеры,Спектрометр,Барометр",
+            "mileage": 12,
+            "speed": 9,
+            "rate": "14.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 16,
+        "fields": {
+            "rover_name": "Average V2",
+            "rover_number": "T198NT",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Электромагнитные датчики,Метеостанция,Спектрофотометры,Тепловизоры",
+            "mileage": 21,
+            "speed": 10,
+            "rate": "14.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 17,
+        "fields": {
+            "rover_name": "Auger V1",
+            "rover_number": "H345GE",
+            "image": "",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Анализатор грунта,Химический анализатор,Механические руки,Буровая установка",
+            "mileage": 12,
+            "speed": 6,
+            "rate": "19.00"
+        }
+    },
+    {
+        "model": "rovers.rover",
+        "pk": 18,
+        "fields": {
+            "rover_name": "Auger V2",
+            "rover_number": "M810KC",
+            "image": "rovers_images/5d34061dce66f1745b6ea68dd3157e68.jpg",
+            "is_available": true,
+            "charge": 100,
+            "location_id": 1,
+            "equipment": "Буровая установка,Инфракрасный спектрометр,Механические руки,Анализатор газов",
+            "mileage": 20,
+            "speed": 10,
+            "rate": "24.00"
+        }
+    }
+]
