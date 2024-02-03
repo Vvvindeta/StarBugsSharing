@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 from datetime import datetime, timedelta, timezone
 import decimal
@@ -13,8 +14,11 @@ from users.models import User
 def rent(request):
     # Получаем список марсоходов
     rovers = Rover.objects.all()
-    # Получаем параметры сортировки из запроса
+
+    # Получаем параметры из запроса
+    page = request.GET.get('page', 1)
     sort_by = request.GET.get('sort_by', 'default')
+
     if sort_by == 'rate':
         rovers = rovers.order_by('rate')
     elif sort_by == 'mileage':
@@ -22,10 +26,15 @@ def rent(request):
     elif sort_by == 'speed':
         rovers = rovers.order_by('-speed')
 
+    # пагинатор
+    paginator = Paginator(rovers, 6)
+    current_page = paginator.page(int(page))
+
     context = {
-        'rovers': rovers,
+        'rovers': current_page,
     }
     return render(request, 'rovers/rent.html', context)
+
 
 @login_required
 def rent_rover(request, rover_id):

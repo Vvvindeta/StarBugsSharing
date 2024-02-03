@@ -2,25 +2,30 @@
 {% block title %}Главная{% endblock %}
 {% block content %}
 {% load static %}
-        <div>
-            <h3><span>делитесь поездками. делитесь звёздами. покоряйте Марс.</span></h3>
+    <section class="hero">
+        <h1 class="hero-slogan">делитесь поездками. делитесь звёздами. покоряйте Марс.</h1>
+        <a id="start-link" class="hero-link hidden" href="{% url 'rovers:rent' %}">Начать сейчас</a>
+        <video class="hero-video" autoplay muted loop>
+            <source src="{% static 'images/bg/rover_on_mars.mp4' %}"> 
+        </video>
+    </section>
+    <hr class="video-shadow">
+    <section class="features">
+        <div class="feature">
+            <h3>Современные технологии</h3>
+            <p>Наши марсоходы оснащены передовыми технологиями для оптимального исследования.</p>
         </div>
-        <div class="zagolovok"><span>О НАС</span></div>
-        <p class="content">StarBugsShare предоставляет Вам
-            уникальную возможность арендовать марсоходы и
-            исследовать поверхность Марса.
-            Наши марсоходы оборудованы передовой технологией и
-            гарантируют вам незабываемые приключения на Красной планете.
-            Присоединяйтесь к нам и давайте совершать путешествия на Марс вместе!</p>
-            
-                <div class="zagolovok">Преимущества Шеринга Марсоходов</div>
-                <div class="benefits">
-                <ul class="pizdatiy-list">
-                    <li>Гибкость и свобода передвижения</li>
-                    <li>Уникальные возможности исследования Марса</li>
-                    <li>Простая регистрация и использование сервиса</li>
-                </ul>
-            </div>
-            <img src="{% static 'images/rovers/rover1.jpg' %}" alt="rover">
-            <div class="zagolovok"> Примерный вид предоставляемого марсохода</div>
+        <div class="feature">
+            <h3>Экспертная поддержка</h3>
+            <p>Наша команда экспертов доступна 24/7 для помощи во время Вашего приключения на Марсе.</p>
+        </div>
+        <div class="feature">
+            <h3>Индивидуальный опыт</h3>
+            <p>Настройте свое путешествие с нашими опциями марсоходов, подобранными под Ваши потребности.</p>
+        </div>
+    </section>
+    <section class="about">
+        <h1 class="mission-title">Наша миссия - сделать исследование Марса доступным для всех.</h1>
+        <p>В StarBugsSharing мы стремимся предоставить беспрецендентные возможности для изучения Красной планеты.</p>
+    </section>
 {% endblock %}

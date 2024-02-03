@@ -19,6 +19,7 @@ class Rover(models.Model):
     class Meta:
         verbose_name = 'Марсоход'
         verbose_name_plural = 'Марсоходы'
+        ordering = ("rover_id",)
     
     def __str__(self):
         return f"{self.rover_name} {self.rover_number}"

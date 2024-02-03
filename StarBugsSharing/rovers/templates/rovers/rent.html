@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {% block title %}Арендовать{% endblock %}
 {% load static %}
+{% load rovers_tags %}
 {% block content %}
 <div class="rent-main-page">
 
@@ -65,9 +66,33 @@
         {% endfor %}
 
     </div>
+    <br>
+    <!-- Пагинация -->
+    {% if rovers %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center my-4">
+
+                {% if rovers.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?{% change_params page=rovers.previous_page_number %}">Назад</a>
+                    </li>
+                {% endif %}
+
+                {% for page in rovers.paginator.page_range %}
+                    {% if page >= rovers.number|add:-2 and page <= rovers.number|add:2 %}
+                        <li class="page-item ">
+                            <a class="page-link"  href="?{% if rovers.number != page %}{% change_params page=page %}{% endif %}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if rovers.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?{% change_params page=rovers.next_page_number %}">Следующая</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
 </div>
-
-
-
-
 {% endblock %}
