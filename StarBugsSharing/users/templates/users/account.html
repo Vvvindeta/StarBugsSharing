@@ -4,41 +4,63 @@
 {% block content %}
     <div class="wrapper">
         <div class="user-visual">
+            <form action="{% url "users:account" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="user-pfp">
-                <img class="user-photo" src="{% static 'images/avatars/astronaut-svgrepo-com.svg' %}" alt="">
+                {% if user.image %}
+                    <img class="user-photo" src="{{ user.image.url }}" alt="">
+                {% else %}
+                    <img class="user-photo" src="{% static 'images/avatars/astronaut-svgrepo-com.svg' %}" alt="">
+                {% endif %}
+                <input type="file" class="promocode-input" id="id_image" name='image' accept="image/*">
             </div>
             <div class="user-data">
                 <h3 class="my-profile-title">Мой профиль</h3> 
                 <table class="account-info">
-                    {% if user.first_name %}
                         <tr>
                             <td class="first-col">Имя</td>
-                            <td class="second-col">{{ user.first_name }}</td>
+                            <td class="second-col"><input
+                                    class="promocode-input"
+                                    type="text"
+                                    placeholder="Введите ваше имя"
+                                    name="name"
+                                    value="{{ form.name.value }}" required>
+                                </td>
                         </tr>
-                    {% endif %}
 
-                    {% if user.last_name %}
                         <tr>
                             <td class="first-col">Фамилия</td>
-                            <td class="second-col">{{ user.last_name }}</td>
+                            <td class="second-col"><input
+                                    class="promocode-input"
+                                    type="text"
+                                    placeholder="Введите вашу фамилию"
+                                    name="last_name"
+                                    value="{{ form.last_name.value }}" required></td>
                         </tr>
-                    {% endif %}
 
-                    {% if user.phone_number %}
                          <tr>
                                 <td class="first-col">Телефон</td>
-                                <td class="second-col">{{ user.phone_number }}</td>
+                                <td class="second-col"><input
+                                    class="promocode-input"
+                                    type="text"
+                                    placeholder="Введите ваше номер"
+                                    name="phone_number"
+                                    value="{{ form.phone_number.value }}" required>
+                                    </td>
                             </tr>
-                    {% endif %}
-
-                    {% if user.email %}
                     <tr>
                         <td class="first-col">Email</td>
-                        <td class="second-col">{{ user.email }}</td>
+                        <td class="second-col"><input
+                                    class="promocode-input"
+                                    type="text"
+                                    placeholder="Введите вашу почту"
+                                    name="email"
+                                    value="{{ form.email.value }}" required></td>
                     </tr>
-                    {% endif %}
                 </table>
+                <button class="submit">сохранить</button>
             </div>
+            </form>
         </div>
         <div class="account-data">
             <div class="balance-data">

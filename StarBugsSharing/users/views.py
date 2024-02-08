@@ -8,11 +8,11 @@ from django.urls import reverse
 from django.contrib import auth
 
 
-
 from users.forms import UserLoginForm, UserRegistrationForm
 
 from users.models import User
 from rovers.models import Using, Rover
+
 
 def registration(request):
     if request.method == 'POST':
@@ -55,11 +55,18 @@ def logout(request):
 
 @login_required
 def account(request):
-
+    if request.method == 'POST':
+        form = UserRegistrationForm(data=request.POST, instance=request.user, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('users:account'))
+    else:
+        form = UserRegistrationForm(instance=request.user)
     user_usings = Using.objects.filter(user=request.user)
     context = {
         'usings_with_total': list(zip(user_usings, calculate_rent_cost(user_usings))),
         'usings': user_usings,
+        'form': form,
     }
     return render(request, 'users/account.html', context)
 

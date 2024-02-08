@@ -13,7 +13,7 @@ from users.models import User
 
 def rent(request):
     # Получаем список марсоходов
-    rovers = Rover.objects.all()
+    rovers = Rover.objects.filter(is_available__gt=0)
 
     # Получаем параметры из запроса
     page = request.GET.get('page', 1)

@@ -57,7 +57,9 @@
                     <div class="rent-block">
                         <form method="post" action="{% url 'rovers:rent_rover' rover.rover_id %}">
                             {% csrf_token %}
+                            {% if user.is_authenticated %}
                             <button type="submit" class="form-submit rent-btn">Арендовать</button>
+                            {% endif %}
                         </form>
                     </div>
                 </div>
