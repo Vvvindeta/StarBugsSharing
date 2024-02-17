@@ -1,24 +1,53 @@
 {% extends 'base.html'%}
-{% block title %}StarBugs++{% endblock %}
+{% block title %}Подписка StarBugs++{% endblock %}
 {% block content %}
-        <div>
-
-            <h3><span>единственная подписка, нужная для настоящих покорителей Марса</span></h3>
-
+<div class="premium-header">
+    <div class="premium-headline-slogan centered-text">
+        <h1>Единственная подписка для настоящих покорителей Марса</h1>
+    </div>
+    <h1 class="premium-headline-title centered-text text-flicker-in-glow">starbugs++</h1>
+    <div class="premium-description centered-text">
+        <p>Подписка StarBugs++ предоставляет вам доступ
+            к абсолютно любому марсоходу, используя Credits.</p>
+        <p>Также вы можете оформить пробный период на 14 дней.</p>
+    </div>
+    <h2 class="premium-small-title centered-text">Всё просто:</h2>
+</div>
+<div class="premium-rules">
+    <div class="premium-line">
+        <div class="rule-number left-number text-flicker-in-glow">
+            01
         </div>
-        <div class="zagolovok"><span>starbugs++</span></div>
-        <p class="content"> <span>Подписка StarBugs++ предоставляет вам доступ
-            к абсолютно любому марсоходу, используя Credits. </span><br>
-            Всё просто:
-            <ol class="pizdatiy-list">
-                <li>Выбираете любой из доступных марсоходов</li>
-                <li>Отдаёте Credits в зависимости от текущего спроса</li>
-                <li>Используете его для ваших нужд</li>
-                <li>Когда надоедает — освобождаете и получаете Credits обратно</li>
-                <li>Все в плюсе!</li>
-            </ol>
-
-        </p>
-        <p class="content">Также вы можете оформить пробный период на 14 дней.<br>
-        Отмените в любой удобный вам момент.</p>
+        <div class="two-rules">
+            <div class="first-rule">
+                Выбираете любой из доступных марсоходов
+            </div>
+            <div class="second-rule">
+                Отдаёте Credits в зависимости от текущего спроса
+            </div>
+        </div>
+        <div class="rule-number right-number text-flicker-in-glow">
+            02
+        </div>
+    </div>
+    <div class="premium-line">
+        <div class="rule-number left-number text-flicker-in-glow">
+            03
+        </div>
+        <div class="two-rules">
+            <div class="first-rule">
+                Используете его для ваших нужд
+            </div>
+            <div class="second-rule">
+                Когда надоедает — освобождаете и получаете Credits обратно
+            </div>
+        </div>
+        <div class="rule-number right-number text-flicker-in-glow">
+            04
+        </div>
+    </div>
+</div>
+<div class="premium-bottom centered-text">
+    <h2 class="premium-small-title">Все в плюсе!</h2>
+</div>
 {% endblock %}

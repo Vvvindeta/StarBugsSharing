@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Главная{% endblock %}
+{% block title %}Шеринг марсоходов StarBugsSharing | Главная{% endblock %}
 {% block content %}
 {% load static %}
     <section class="hero">
-        <h1 class="hero-slogan">делитесь поездками. делитесь звёздами. покоряйте Марс.</h1>
-        <a id="start-link" class="hero-link hidden" href="{% url 'rovers:rent' %}">Начать сейчас</a>
+        <div class="hero-slogan">
+            <h1>делитесь поездками.</h1>
+            <h1>делитесь звёздами.</h1>
+            <h1>покоряйте Марс.</h1>
+        </div>
+        <a id="start-link" class="hero-link" href="{% url 'rovers:rent' %}">Начать сейчас</a>
         <video class="hero-video" autoplay muted loop>
             <source src="{% static 'images/bg/rover_on_mars.mp4' %}"> 
         </video>

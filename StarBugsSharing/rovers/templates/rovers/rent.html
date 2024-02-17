@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-{% block title %}Арендовать{% endblock %}
+{% block title %}Арендовать StarBug{% endblock %}
 {% load static %}
 {% load rovers_tags %}
 {% block content %}
@@ -83,7 +83,11 @@
                 {% for page in rovers.paginator.page_range %}
                     {% if page >= rovers.number|add:-2 and page <= rovers.number|add:2 %}
                         <li class="page-item ">
-                            <a class="page-link"  href="?{% if rovers.number != page %}{% change_params page=page %}{% endif %}">{{ page }}</a>
+                            {% if rovers.number != page %}
+                                <a class="page-link" href="?{% if rovers.number != page %}{% change_params page=page %}{% endif %}">{{ page }}</a>
+                            {% else %}
+                                <span class="page-link current-page">{{ page }}</span>
+                            {% endif %}
                         </li>
                     {% endif %}
                 {% endfor %}
@@ -96,5 +100,6 @@
             </ul>
         </nav>
     {% endif %}
+
 </div>
 {% endblock %}
